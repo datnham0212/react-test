@@ -1,0 +1,21 @@
+.total-amount,
+.total-expenses,
+.savings {
+  display: inline-block;
+  width: 30%;
+  height: 100px;
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 0.25cm;
+  margin-right: 0.5cm;
+  border-style: groove;
+  background-color: whitesmoke;
+}
+
+.total-amount h2,
+.total-expenses h2,
+.savings h2 {
+  margin-top: 35px;
+  margin-left: 10px;
+}
+
