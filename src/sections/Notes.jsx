@@ -3,9 +3,12 @@ import './static/Notes.css'
 const Notes = () => {
     return (
     <>
-        <textarea rows={12} cols={80} placeholder="Enter your notes here" />
-
-        <button className="btn saveNote">Save</button>
+    <div className = "noteContainer">
+        <textarea className="note-title" rows={1} cols={40} placeholder="Name: "/>
+        <textarea className="note-content" rows={15} cols={80} placeholder="Enter your notes here: " />
+    </div>
+        
+        <button className="saveNote">Save</button>
         
     </>    
     );

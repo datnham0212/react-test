@@ -1,0 +1,42 @@
+
+.left.half ul li a {
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left.half ul li a:hover {
+    color: #007bff;
+}
+  
+
+.left.half ul li a.active {
+    color: #007bff;
+}
+
+
+.left.half ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+}
+
+.left.half li {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.left.half a {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(207, 207, 207);
+    border-radius: 10px;
+    padding: 10px;
+    display: block;    
+}
+

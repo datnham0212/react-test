@@ -1,6 +1,15 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTasks } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
+import { faStickyNote } from "@fortawesome/free-solid-svg-icons";
+import { faCoins } from "@fortawesome/free-solid-svg-icons";
+import { faCalculator } from "@fortawesome/free-solid-svg-icons";
+import { faRulerHorizontal } from "@fortawesome/free-solid-svg-icons";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import './App.css'
 
 import Expense from './sections/Expense';
@@ -12,27 +21,18 @@ import UnitConverter from './sections/UnitConverter';
 import Dictionary from './sections/Dictionary';
 import Translator from './sections/Translator';
 
-const Profile = () => {
-  return (
-    <div className="profile">
-      <h2>Good day, Username!</h2>
-      <img src={reactLogo} className="profile-image"/>
-    </div>
-  ); 
-};
-
-const Sidebar = ({ onSectionClick }) => {
+const Sidebar = ({ onSectionClick, activeSection }) => {
   return (
     <div className="left half">
       <ul>
-        <li><a href="#todo" onClick={(e) => onSectionClick(e, 'todo')}>Todo list</a></li>
-        <li><a href="#timetable" onClick={(e) => onSectionClick(e, 'timetable')}>Timetable</a></li>
-        <li><a href="#notes" onClick={(e) => onSectionClick(e, 'notes')}>Notes</a></li>
-        <li><a href="#expense" onClick={(e) => onSectionClick(e, 'expense')}>Expense logs</a></li>
-        <li><a href="#calculator" onClick={(e) => onSectionClick(e, 'calculator')}>Calculator</a></li>
-        <li><a href="#unit-converter" onClick={(e) => onSectionClick(e, 'unit-converter')}>Unit Converter</a></li>
-        <li><a href="#dictionary" onClick={(e) => onSectionClick(e, 'dictionary')}>Dictionary</a></li>
-        <li><a href="#translator" onClick={(e) => onSectionClick(e, 'translator')}>Translator</a></li>
+        <li><a href="#todo" onClick={(e) => onSectionClick(e, 'todo')} className={activeSection === 'todo' ? 'active' : ''}><FontAwesomeIcon icon={faTasks} /></a></li>
+        <li><a href="#timetable" onClick={(e) => onSectionClick(e, 'timetable')} className={activeSection === 'timetable' ? 'active' : ''}><FontAwesomeIcon icon={faCalendarDays} /></a></li>
+        <li><a href="#notes" onClick={(e) => onSectionClick(e, 'notes')} className={activeSection === 'notes' ? 'active' : ''}><FontAwesomeIcon icon={faStickyNote} /></a></li>
+        <li><a href="#expense" onClick={(e) => onSectionClick(e, 'expense')} className={activeSection === 'expense' ? 'active' : ''}><FontAwesomeIcon icon={faCoins} /></a></li>
+        <li><a href="#calculator" onClick={(e) => onSectionClick(e, 'calculator')} className={activeSection === 'calculator' ? 'active' : ''}><FontAwesomeIcon icon={faCalculator} /></a></li>
+        <li><a href="#unit-converter" onClick={(e) => onSectionClick(e, 'unit-converter')} className={activeSection === 'unit-converter' ? 'active' : ''}><FontAwesomeIcon icon={faRulerHorizontal} /></a></li>
+        <li><a href="#dictionary" onClick={(e) => onSectionClick(e, 'dictionary')} className={activeSection === 'dictionary' ? 'active' : ''}><FontAwesomeIcon icon={faBook} /></a></li>
+        <li><a href="#translator" onClick={(e) => onSectionClick(e, 'translator')} className={activeSection === 'translator' ? 'active' : ''}><FontAwesomeIcon icon={faLanguage} /></a></li>
       </ul>
     </div>
   );
@@ -41,7 +41,6 @@ const Sidebar = ({ onSectionClick }) => {
 const Section = ({ id, content, isVisible }) => {
   return (
     <section id={id} style={{ display: isVisible ? 'block' : 'none' }}>
-      {/* {content} */}
       {id === 'todo' && <Todo />}
       {id === 'timetable' && <Timetable />}
       {id === 'notes' && <Notes />}
@@ -54,6 +53,7 @@ const Section = ({ id, content, isVisible }) => {
   );
 };
 
+
 function App() {
   const [visibleSection, setVisibleSection] = useState('todo');
 
@@ -64,10 +64,10 @@ function App() {
 
   return (
     <div className="app">
-      <Sidebar onSectionClick={handleSectionClick} />
+      <Sidebar onSectionClick={handleSectionClick} activeSection={visibleSection}/>
       <div className="right half">
         <header>
-          <Profile />
+          {/* <Profile /> */}
         </header>
         <main>
           <Section id="todo" isVisible={visibleSection === 'todo'} />
