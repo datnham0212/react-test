@@ -1,0 +1,74 @@
+#todo-tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.todo-frame {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-180%);
+    width: 1000px;
+    height: 20%;
+    border: 2px solid rgb(0, 0, 0);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom: transparent;
+}
+
+.list-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 1000px;
+    height: 55vh;
+    border: 2px solid rgb(0, 0, 0);
+    border-top: transparent;
+    border-end-end-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#task-input {
+    font-size: larger;
+    width: 500px;
+    height: 50px;
+}
+
+#task-button {
+    background-color: limegreen;
+    width: 2cm;
+    height: 1cm;
+    margin-left: 0.8cm;
+    cursor: pointer;
+}
+
+#no_of_task {
+    margin-left: 1.5cm;
+}
+
+/* li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5cm;
+    padding-left: 0.25cm;
+    border: 2px solid black;
+    width: 96%;
+    height: 50px;
+    border-radius: 20px;
+} */
+
+#remove-button {
+    width: 2cm;
+    height: 1cm;
+    position: absolute;
+    transform: translateX(30cm);
+    cursor: pointer;
+}
+
+
