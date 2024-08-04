@@ -1,4 +1,3 @@
-// Dashboard.jsx
 import React from 'react';
 import './static/Expense.css';
 const Expense = () => {

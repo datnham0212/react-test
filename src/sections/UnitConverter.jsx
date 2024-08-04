@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './static/UnitConverter.css'
 
 const UnitConverter = () => {
   const [input, setInput] = useState('');
@@ -66,6 +67,8 @@ const UnitConverter = () => {
 
   return (
     <fieldset>
+
+      <div className='container' id = "from-input">
       <label>From: </label>
       <input type="text" id="cinput" name="cinput" value={input} onChange={handleInput} />
       <select id="cdropdown1" name="cdropdown1" value={inputOption} onChange={handleInputOption}>
@@ -75,11 +78,13 @@ const UnitConverter = () => {
         <option value="yards">Yards</option>
         <option value="feet">Feet</option>
       </select>
+      </div>
 
-      <button type="button" onClick={swap}>
+      <button id = "swap" type="button" onClick={swap}>
         <i className="fa fa-exchange"></i>
       </button>
 
+      <div className='container' id = "to-input">
       <label>To: </label>
       <input type="text" id="coutput" name="coutput" value={result} readOnly />
       <select id="cdropdown2" name="cdropdown2" value={outputOption} onChange={handleOutputOption}>
@@ -89,6 +94,8 @@ const UnitConverter = () => {
         <option value="meters">Meters</option>
         <option value="kilometers">Kilometers</option>
       </select>
+      </div>
+
     </fieldset>
   );
 };
